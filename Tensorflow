@@ -1,6 +1,26 @@
 Tensor Flow 
 
-Everything in tensor flow works on a computational graph -> with a
+Everything in tensor flow works on a takes place in graph and running and evaluating uses a session. 
+
+Computation steps in Tensorflow
+1) create a tf tensor - > which defines the operation that you want to compute
+2) by default the tensor will be added to the default graph 
+3) create a session 
+4) run the session to compute the operation 
+
+example: 
+y = tf.add(675,325)
+g = tf.get_default_graph()
+[op.name for op in g.get_operations()]
+g.get_tensor_by_name('Add'+':0')
+sess = tf.Session() 
+computed_y = y.eval(session=sess)
+computed_y
+sess.close()
+
+#create a interactive session 
+sess = tf.InteractiveSession()
+x.eval()   # this way we can speeden up the process 
 
 
 An image kernel is a small matrix used to apply effects like the ones you might find in Photoshop or Gimp, 
