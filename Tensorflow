@@ -18,10 +18,9 @@ computed_y = y.eval(session=sess)
 computed_y
 sess.close()
 
-#create a interactive session 
+#create a interactive session # this way we can speeden up the process 
 sess = tf.InteractiveSession()
-x.eval()   # this way we can speeden up the process 
-
+x.eval()   
 
 An image kernel is a small matrix used to apply effects like the ones you might find in Photoshop or Gimp, 
 such as blurring, sharpening, outlining or embossing. They're also used in machine learning for 'feature extraction', 
@@ -34,3 +33,12 @@ we multiply each pixel by the corresponding entry of the kernel and then take th
 That sum becomes a new pixel in the image on the right. 
 
 Read : http://setosa.io/ev/image-kernels/
+
+# make a 2D gausian Kernal - this can be done by multiplying the vector by its transpose 
+
+ksize = z.get_shape().as_list()[0]
+z_2d = tf.matmul(tf.reshape(z,[ksize,1]),tf.reshape(z,[1,ksize]))
+
+plt.plot(z_2d.eval()) 
+plt.imshow(z_2d.eval()) 
+
