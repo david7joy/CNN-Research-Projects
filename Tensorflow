@@ -1,0 +1,16 @@
+Tensor Flow 
+
+Everything in tensor flow works on a computational graph -> with a
+
+
+An image kernel is a small matrix used to apply effects like the ones you might find in Photoshop or Gimp, 
+such as blurring, sharpening, outlining or embossing. They're also used in machine learning for 'feature extraction', 
+a technique for determining the most important portions of an image. 
+
+How an image kernal works : 
+
+3x3 block of pixels in the image on the left, 
+we multiply each pixel by the corresponding entry of the kernel and then take the sum.
+That sum becomes a new pixel in the image on the right. 
+
+Read : http://setosa.io/ev/image-kernels/
