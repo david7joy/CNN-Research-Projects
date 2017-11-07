@@ -47,4 +47,25 @@ hence, this gausian kernal or any other kernal becomes sort of like a lens throu
 convolve = tf.nn.conv2d(img_4d,z_4d,strides=[1,1,1,1],padding='SAME')
 res = convolve.eval()
 
-Stride - defines/says how a kernal should move across the image 
+Stride - defines/says how a kernal should move across the image a 1,1,1,1 stride means convolve across each pixel. 
+         a 1,2,2,1 stride would mean move across every other pixel. 
+
+Padding - defines the borderig, if Valid then padding , if same then dimension change. 
+
+Placeholder : 
+Placeholder is simply a variable that we will assign data to at a later date.
+It allows us to create our operations and build our computation graph, without needing the data.
+
+read : https://learningtensorflow.com/lesson4/
+
+import tensorflow as tf
+
+x = tf.placeholder("float", None)
+y = x * 2
+
+with tf.Session() as session:
+    result = session.run(y, feed_dict={x: [1, 2, 3]})
+    print(result)
+
+
+
