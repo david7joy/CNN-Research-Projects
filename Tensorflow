@@ -28,9 +28,9 @@ a technique for determining the most important portions of an image.
 
 How an image kernal works : 
 
-3x3 block of pixels in the image on the left, 
-we multiply each pixel by the corresponding entry of the kernel and then take the sum.
-That sum becomes a new pixel in the image on the right. 
+1) nxn block of pixels on an image that slides over the data 
+2) It Keeps multiply each pixel in the image with a by the corresponding kernel and then adds it up to one pixel
+3) That sum becomes a new pixel in the image on the right
 
 Read : http://setosa.io/ev/image-kernels/
 
@@ -42,3 +42,9 @@ z_2d = tf.matmul(tf.reshape(z,[ksize,1]),tf.reshape(z,[1,ksize]))
 plt.plot(z_2d.eval()) 
 plt.imshow(z_2d.eval()) 
 
+hence, this gausian kernal or any other kernal becomes sort of like a lens through which we see our image data.
+
+convolve = tf.nn.conv2d(img_4d,z_4d,strides=[1,1,1,1],padding='SAME')
+res = convolve.eval()
+
+Stride - defines/says how a kernal should move across the image 
