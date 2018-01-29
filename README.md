@@ -51,6 +51,8 @@ Why padding ?
 1) to avoid size of image from shriking 
 2) to use corner pixels and information more usefully 
 
+The below is for Output size !! 
+
 Padding ->  n + 2p - f +1, where n is size of image 144X144 then n = 144, p is padding size , 
             f is size of kernal i.e 3X3, f=3
 Stride - > z =[(( n + 2p - f )/ s) + 1] , where  s is stride 
