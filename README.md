@@ -58,4 +58,6 @@ Padding ->  n + 2p - f +1, where n is size of image 144X144 then n = 144, p is p
 Stride - > z =[(( n + 2p - f )/ s) + 1] , where  s is stride 
            sometimes the overall result may not be an integer hence we need to floor the whole value !! ie floor(z) 
            
-In math however , we need to flip the kernal horizontally and vertically and then multiply to call it convolution. This mirroring is not used in deep learning, we still use the word convolution.
+In math however , we need to flip the kernal horizontally and vertically and then multiply to call it convolution. This mirroring is not used in deep learning, we still use the word convolution instead of calling cross correlation.
+
+Pooling : taking max of a set of filter and adding it to a next image ! 
