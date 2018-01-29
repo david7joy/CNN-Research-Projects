@@ -46,3 +46,12 @@ Disadvantages:
 •	The smaller the batch the less accurate estimate of the gradient. In the figure below you can see that mini-batch (green color) gradient's direction fluctuates compare to the full batch (blue color).
  
 Stochastic is just a mini-batch with batch_size equal to 1. Gradient changes its direction even more often than a mini-batch.
+
+Why padding ? 
+1) to avoid size of image from shriking 
+2) to use corner pixels and information more usefully 
+
+Padding ->  n + 2p - f +1, where n is size of image 144*144 then n = 144, p is padding size , 
+            f is size of kernal i.e 3*3, f=3
+Stride - > z =[(( n + 2p - f )/ s) + 1] , where  s is stride 
+           sometimes the overall result may not be an integer hence we need to floor the whole value !! ie floor(z) 
