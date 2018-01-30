@@ -61,3 +61,40 @@ Stride - > z =[(( n + 2p - f )/ s) + 1] , where  s is stride
 In math however , we need to flip the kernal horizontally and vertically and then multiply to call it convolution. This mirroring is not used in deep learning, we still use the word convolution instead of calling cross correlation.
 
 Pooling : taking max of a set of filter and adding it to a next image ! 
+
+Classic Networks of CNN : 
+ - LeNet-5 
+ - Alex Net
+ - VGG -16 
+ 
+ others : ResNet(152 layers ) , inception 
+ 
+ Advanced comment on : Yan LeCun's 98 - Paper 
+ - People used sigmoid and tanH,no relu 
+ - to save compute the filters and the no of channels in the filter werent the same as input. 
+ - non Linearity after pooling (sigmoid) 
+ 
+ AlexNet : 
+ - similar to leNet, parameters 60M compared to 60K from LeNet
+ - Used Relu 
+ - Multiple GPU's 
+ - Local response normalization !! - idea is looks ar 1 position and looks at the whole channel deep end and then normalizes them 
+ 
+ VGG 16 : uses a simpler network , conv = 3X3, s=1, same with Maxpool = 2X2,s=2 but this is a large network !! 
+ There is also VGG 19 !! the pattern in VGG is great and uniform. 
+ 
+ ResNet : 
+  brings a short cut !! that is adds a layer before non linearity ei a(l+2) = g(Z[l+3] + a[l])
+  This allows to train deeper network. each block can be a residual block !! 
+  
+ advantage : 
+ if plain network more deep network the cost function goes up after more deep layers .. 
+ a resnet will continue to find a lower cost function .. 
+ 
+ 
+  
+   
+ 
+ 
+ 
+ 
