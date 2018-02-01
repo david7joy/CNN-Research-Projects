@@ -91,8 +91,51 @@ Classic Networks of CNN :
  if plain network more deep network the cost function goes up after more deep layers .. 
  a resnet will continue to find a lower cost function .. 
  
+ Object detection and Localization !! 
  
-  
+ Face Recognition - > 
+ 
+ face verification vs recognition !! 
+ 
+ One Shot learning - > 
+ one approach, Input an image and run CNN and get softmax output !! 
+ 
+ or 
+ 
+ Learning a "similarity" function : d(img1,img2) = degree of difference between images !! 
+ if same then small number if different then large number 
+ 
+<= tao "Same" 
+ > tao "Different"
+ 
+ Siamese Network !! to get difference between images!! 
+ take difference of the final 2 fc value of the same CNN  
+
+ Triplet loss - 3 loss observation !! Anchor with Positive and Negative !! 3 comparisons ! 
+ given 3 images A,P and N :
+ 
+ l(A,P,N) = max ( ||f(a)-f(p)||^2 - ||f(a)-f(n)||^2  + Alpha, 0)
+ 
+ Choosing the triplets 
+ 
+ pre trained model is available on line for large data set !! 
+ 
+ steps : 
+ 1) Pairs of images as X and Y = 1 for same , 0 for different
+ 2) Use Siamese network 
+ 3) use difference/binary classification 
+ 
+ #use pretrained networks !! 
+ 
+ Neural Style Transfer !! 
+ - Combination of 2 images !! one is content(c) imagr, style Image (s) and generated image (G) 
+ 
+ cost function of Nueral Style transfer 
+ 
+ J(G) = alpha*Jcontent(C,G) + beta*Jstyle(S,G) 
+ 
+ 
+ 
    
  
  
